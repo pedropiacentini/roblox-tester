@@ -3,7 +3,9 @@ const TestLogs = require("@game/ReplicatedStorage/Shared/robloxTester/Tools/Test
 local newFail = TestLogs.newFail
 local robloxTester = {
     assertEquals = function(a: any, b: any)
-        newFail(`expect {a} to be equal to {b}`)
+        if a ~= b then
+            newFail(`expect {a} to be equal to {b}`)
+        end
     end
 }
 
