@@ -1,1 +1,3 @@
-print("Hello world, from server!")
+local testerRunner = require("@game/ReplicatedStorage/Shared/robloxTester/testerRunner")
+
+testerRunner()

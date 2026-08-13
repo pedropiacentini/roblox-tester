@@ -1,4 +1,6 @@
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
+const PrintLogs = require("@game/ReplicatedStorage/Shared/robloxTester/Tools/PrintLogs")
+const TestLogs = require("@game/ReplicatedStorage/Shared/robloxTester/Tools/TestLogs")
 
 local function getScriptsFromTestsFolder()
 	local scripts = {}
@@ -20,10 +22,13 @@ end
 
 local function run()
 	local scriptsList = getScriptsFromTestsFolder()
+	print("Start tests")
 	for _, scriptObj in scriptsList do
+
 		local script = require(scriptObj) :: () -> ()
 		script()
 	end
+	PrintLogs.printLogs(TestLogs.failedTests, TestLogs.testsCount, TestLogs.failCount)
 end
 
 return run
