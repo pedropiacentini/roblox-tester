@@ -3,7 +3,6 @@ local TestLog = {
 	
 	testsCount = 0,
 	failCount = 0 ,
-	successCount = 0
 }
 
 function TestLog.newFail(message: string)
@@ -12,6 +11,10 @@ function TestLog.newFail(message: string)
 	TestLog.failedTests[TestLog.failCount] = outputMessage
 	
 	TestLog.failCount += 1
+	TestLog.testsCount += 1
+end
+
+function TestLog.newSuccess()
 	TestLog.testsCount += 1
 end
 
