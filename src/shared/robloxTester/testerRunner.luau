@@ -25,8 +25,10 @@ local function run()
 	print("Start tests")
 	for _, scriptObj in scriptsList do
 
-		local script = require(scriptObj) :: () -> ()
-		script()
+		local scriptTable = require(scriptObj) :: {() -> ()}
+		for _, script in scriptTable do
+			script()
+		end
 	end
 	PrintLogs.printLogs(TestLogs.failedTests, TestLogs.testsCount, TestLogs.failCount)
 end
