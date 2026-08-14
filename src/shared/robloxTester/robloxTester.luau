@@ -18,6 +18,14 @@ local robloxTester = {
             newFail(`expect {a} to be true`)
         end
     end,
+
+    assertFalse = function(a: any)
+        if not a then
+            newSuccess()
+        else
+            newFail(`expect {a} to be false`)
+        end
+    end
 }
 
 return robloxTester
