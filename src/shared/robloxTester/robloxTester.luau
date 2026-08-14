@@ -9,7 +9,15 @@ local robloxTester = {
         else
             newFail(`expect {a} to be equal to {b}`)
         end
-    end
+    end,
+
+    assertTrue = function(a: any)
+        if a then
+            newSuccess()
+        else
+            newFail(`expect {a} to be true`)
+        end
+    end,
 }
 
 return robloxTester
