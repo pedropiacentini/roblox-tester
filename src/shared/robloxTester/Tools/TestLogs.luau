@@ -7,7 +7,7 @@ local TestLog = {
 
 function TestLog.newFail(message: string)
 	local outputMessage = `{message} in {debug.traceback("", 3)}`
-	outputMessage = string.gsub(message, "[\r\n]", "")
+	outputMessage = string.gsub(outputMessage, "[\r\n]", "")
 	TestLog.failedTests[TestLog.failCount] = outputMessage
 	
 	TestLog.failCount += 1
