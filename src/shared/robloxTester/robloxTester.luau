@@ -3,29 +3,29 @@ const TestLogs = require("@game/ReplicatedStorage/Shared/robloxTester/Tools/Test
 local newFail, newSuccess = TestLogs.newFail, TestLogs.newSuccess
 
 local robloxTester = {
-    assertEquals = function(a: any, b: any)
-        if a == b then
-            newSuccess()
-        else
-            newFail(`expect {a} to be equal to {b}`)
-        end
-    end,
+	assertEquals = function(a: any, b: any)
+		if a == b then
+			newSuccess()
+		else
+			newFail(`expect {a} to be equal to {b}`)
+		end
+	end,
 
-    assertTrue = function(a: any)
-        if a then
-            newSuccess()
-        else
-            newFail(`expect {a} to be true`)
-        end
-    end,
+	assertTrue = function(a: any)
+		if a then
+			newSuccess()
+		else
+			newFail(`expect {a} to be true`)
+		end
+	end,
 
-    assertFalse = function(a: any)
-        if not a then
-            newSuccess()
-        else
-            newFail(`expect {a} to be false`)
-        end
-    end
+	assertFalse = function(a: any)
+		if not a then
+			newSuccess()
+		else
+			newFail(`expect {a} to be false`)
+		end
+	end,
 }
 
 return robloxTester
