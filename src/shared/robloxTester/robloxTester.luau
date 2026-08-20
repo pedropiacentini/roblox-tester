@@ -4,7 +4,16 @@ local newFail, newSuccess = TestLogs.newFail, TestLogs.newSuccess
 
 local robloxTester = {
 	assertEquals = function(a: any, b: any)
-		if a == b then
+		local equal: boolean
+		if typeof(a) == "table" then
+			if typeof(a.equals == "function") then
+				equal = a:equals(b)
+			end
+		else
+			equal = (a == b)
+		end
+
+		if equal then
 			newSuccess()
 		else
 			newFail(`expect {a} to be equal to {b}`)
