@@ -1,8 +1,8 @@
-const TestLogs = require("@game/ReplicatedStorage/Shared/robloxTester/Tools/TestLogs")
+const TestLogs = require("@game/ReplicatedStorage/Shared/RoTest/Tools/TestLogs")
 
 local newFail, newSuccess = TestLogs.newFail, TestLogs.newSuccess
 
-local robloxTester = {
+local Assertions = {
 	assertEquals = function(a: any, b: any)
 		local equal: boolean
 		if typeof(a) == "table" then
@@ -37,4 +37,4 @@ local robloxTester = {
 	end,
 }
 
-return robloxTester
+return Assertions

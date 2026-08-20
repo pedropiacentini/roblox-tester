@@ -1,6 +1,6 @@
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
-const PrintLogs = require("@game/ReplicatedStorage/Shared/robloxTester/Tools/PrintLogs")
-const TestLogs = require("@game/ReplicatedStorage/Shared/robloxTester/Tools/TestLogs")
+const PrintLogs = require("@game/ReplicatedStorage/Shared/RoTest/Tools/PrintLogs")
+const TestLogs = require("@game/ReplicatedStorage/Shared/RoTest/Tools/TestLogs")
 
 local function getScriptsFromTestsFolder()
 	local scripts = {}

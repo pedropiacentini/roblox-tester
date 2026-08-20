@@ -1,3 +1,3 @@
-local testerRunner = require("@game/ReplicatedStorage/Shared/robloxTester/testerRunner")
+local testerRunner = require("@game/ReplicatedStorage/Shared/RoTest/testerRunner")
 
 testerRunner()
